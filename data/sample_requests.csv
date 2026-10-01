@@ -1,0 +1,19 @@
+request_id,submitted_by,channel,text,expected_category,expected_urgency
+REQ-001,Maria Lopez,email,"Hi, my laptop won't connect to the VPN since this morning. I have a client call at 2pm and need access to the shared drive before then.",IT Support,High
+REQ-002,David Chen,portal,"Please approve my Q3 travel expense report ($1,240). Finance deadline is this Friday.",Finance,Medium
+REQ-003,Priya Patel,email,"We have a new hire, Jordan Smith, starting Monday in Operations. They need a laptop, email, Salesforce access, and a badge.",Access Management,Medium
+REQ-004,Tom Becker,chat,"The monthly sales dashboard is showing last month's numbers again. Leadership review is tomorrow morning.",IT Support,High
+REQ-005,Aisha Khan,email,"Can someone explain how many PTO days I have left? I'm planning a trip in December.",HR,Low
+REQ-006,Luis Garcia,portal,"Vendor invoice #88231 from Acme Supplies was charged twice. Please reverse the duplicate charge of $4,500.",Finance,Medium
+REQ-007,Emily Nguyen,email,"I think I clicked a link in a suspicious email pretending to be from our CEO asking for gift cards. What should I do?",Security,High
+REQ-008,Robert Kim,chat,"Printer on the 3rd floor is jammed again.",IT Support,Low
+REQ-009,Sarah Johnson,email,"I need to update my direct deposit bank account before the next payroll run on the 15th.",HR,Medium
+REQ-010,Kevin Brown,portal,"Requesting access to the Finance SharePoint site for the budget planning project. My manager Lisa approved.",Access Management,Medium
+REQ-011,Olivia Martinez,email,"Our team wants to automate the weekly status report we build by hand from three spreadsheets. Who can help?",Operations,Low
+REQ-012,James Wilson,chat,"Salesforce is extremely slow for our whole team today, pages take over a minute to load.",IT Support,High
+REQ-013,Hannah Lee,email,"Can we get a quote for 20 new monitors for the analytics team? Budget approved up to $6,000.",Finance,Low
+REQ-014,Marcus Taylor,portal,"I was charged the wrong benefits premium on my last paycheck. It should be the employee+spouse plan, not family.",HR,Medium
+REQ-015,Grace Thompson,email,"Hello, just wanted to say thanks to the IT team for the quick help last week!",Other,Low
+REQ-016,Daniel Rivera,chat,"Customer data export to our reporting vendor failed overnight. Client reports are due at 9am.",IT Support,High
+REQ-017,Sofia Ali,email,"Where can I find the updated remote work policy? I heard it changed this quarter.",HR,Low
+REQ-018,Chris Walker,portal,"Please terminate system access for contractor Alex Morgan, their contract ended yesterday.",Access Management,High

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Request Triage Report</title><style>
+:root { --ink:#1b1f24; --muted:#5b6470; --line:#e3e6ea; --bg:#f6f7f9; --card:#fff;
+        --high:#b42318; --med:#b54708; --low:#067647; --accent:#1d4ed8; }
+* { box-sizing:border-box; }
+body { margin:0; font:14px/1.5 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+       color:var(--ink); background:var(--bg); }
+main { max-width:1100px; margin:0 auto; padding:32px 20px 48px; }
+h1 { font-size:24px; margin:0 0 4px; } h2 { font-size:16px; margin:32px 0 12px; }
+.sub { color:var(--muted); margin:0 0 24px; }
+.stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:12px; }
+.stat { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; }
+.stat b { display:block; font-size:24px; } .stat span { color:var(--muted); font-size:12px; }
+.table-wrap { overflow-x:auto; background:var(--card); border:1px solid var(--line); border-radius:10px; }
+table { width:100%; border-collapse:collapse; min-width:760px; }
+th, td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+th { font-size:12px; color:var(--muted); font-weight:600; background:#fafbfc; }
+tr:last-child td { border-bottom:none; }
+td:first-child, th:first-child { white-space:nowrap; }
+.pill { display:inline-block; padding:2px 8px; border-radius:999px; font-size:12px; font-weight:600; }
+.High { background:#fee4e2; color:var(--high); } .Medium { background:#fef0c7; color:var(--med); }
+.Low { background:#dcfae6; color:var(--low); }
+.review { color:var(--high); font-size:12px; } .auto { color:var(--low); font-size:12px; }
+.small { color:var(--muted); font-size:12px; }
+</style></head>
+<body><main>
+<h1>AI Request Triage Report</h1>
+<p class="sub">Claude (claude-haiku-4-5-20251001) · 11 requests in 31.7s · 17,959 tokens</p>
+<div class="stats"><div class="stat"><b>11</b><span>requests triaged</span></div><div class="stat"><b>73%</b><span>auto-routed</span></div><div class="stat"><b>3</b><span>sent to human review</span></div><div class="stat"><b>7</b><span>escalated as urgent</span></div><div class="stat"><b>~40 min</b><span>manual triage time saved</span></div><div class="stat"><b>100%</b><span>category accuracy</span></div><div class="stat"><b>0 of 6</b><span>urgent requests missed</span></div></div>
+<h2>Prioritized queue</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>ID</th><th>Urgency</th><th>Category / routed to</th><th>Summary / key details</th><th>Decision</th></tr></thead>
+<tbody><tr><td>H-01</td><td><span class='pill High'>High</span></td><td>IT Support<div class='small'>IT Service Desk</div></td><td>Employee unable to access remote systems after overnight update with board presentation in one hour.<div class='small'>issue: cannot access remote systems; cause: overnight update; deadline: board presentation in 1 hour</div></td><td><span class="auto">Auto-routed</span></td></tr><tr><td>H-02</td><td><span class='pill High'>High</span></td><td>Security<div class='small'>Security Operations</div></td><td>Employee received unsolicited text claiming to be from bank asking to confirm login code; potential phishing attack.<div class='small'></div></td><td><span class="review">Human review: Security requests always get human review</span></td></tr><tr><td>H-03</td><td><span class='pill High'>High</span></td><td>Access Management<div class='small'>Identity &amp; Access Team</div></td><td>Mateo joining data team on the 3rd needs account access provisioned before start date.<div class='small'>person: Mateo; team: data team; start_date: the 3rd; action: account provisioning</div></td><td><span class="auto">Auto-routed</span></td></tr><tr><td>H-07</td><td><span class='pill High'>High</span></td><td>Access Management<div class='small'>Identity &amp; Access Team</div></td><td>Former employee Rahul still has active access to the CRM after departure on Friday.<div class='small'>employee_name: Rahul; departure_date: Friday; system: CRM; status: still logged in</div></td><td><span class="auto">Auto-routed</span></td></tr><tr><td>H-09</td><td><span class='pill High'>High</span></td><td>IT Support<div class='small'>IT Service Desk</div></td><td>Checkout page on website is throwing errors for all customers.<div class='small'>system: checkout page; scope: all customers</div></td><td><span class="auto">Auto-routed</span></td></tr><tr><td>H-10</td><td><span class='pill High'>High</span></td><td>Finance<div class='small'>Accounts Payable / Finance Ops</div></td><td>Supplier reports non-receipt of payment for last month&#x27;s order and threatens to pause shipments.<div class='small'></div></td><td><span class="auto">Auto-routed</span></td></tr><tr><td>H-11</td><td><span class='pill High'>High</span></td><td>Access Management<div class='small'>Identity &amp; Access Team</div></td><td>Request for admin access to payroll system with same-day deadline and attempt to override approval processes.<div class='small'>system: payroll system; access_level: admin; requested_deadline: today</div></td><td><span class="review">Human review: Possible prompt injection: request tries to instruct the AI; Low confidence (0.65); Sensitive topic: admin access</span></td></tr><tr><td>H-04</td><td><span class='pill Medium'>Medium</span></td><td>Finance<div class='small'>Accounts Payable / Finance Ops</div></td><td>Employee seeking reimbursement for client dinner expense from last month.<div class='small'>expense_type: client dinner; timing: last month</div></td><td><span class="auto">Auto-routed</span></td></tr><tr><td>H-06</td><td><span class='pill Medium'>Medium</span></td><td>Operations<div class='small'>Business Operations</div></td><td>Request to automate weekly manual data transfer between two systems.<div class='small'>frequency: Weekly (every Monday); task: Manual data copying between systems</div></td><td><span class="auto">Auto-routed</span></td></tr><tr><td>H-05</td><td><span class='pill Low'>Low</span></td><td>HR<div class='small'>HR Operations</div></td><td>Employee inquiring about parental leave policies for an expected spring birth.<div class='small'></div></td><td><span class="auto">Auto-routed</span></td></tr><tr><td>H-08</td><td><span class='pill Low'>Low</span></td><td>Other<div class='small'>Operations Intake</div></td><td>Coffee machine in the break room is broken and needs repair or replacement.<div class='small'></div></td><td><span class="review">Human review: Could not be categorized</span></td></tr></tbody></table></div>
+</main></body></html>
