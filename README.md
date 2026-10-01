@@ -1,8 +1,10 @@
 # AI Request Triage
 
-*Built by Jesús Urbano, using Claude as an AI coding assistant.*
+*Built by Jesús Urbano with AI-assisted development (Claude). Runs on the Claude API via the Anthropic Console.*
 
 **An LLM-powered automation that turns a stream of messy employee requests into a prioritized, routed queue, with guardrails that keep people in the loop where it matters, and an evaluation harness that measures whether it can be trusted.**
+
+*I evaluate production LLM and RAG systems in model risk management. This project applies the same discipline from the builder side: held-out testing, guardrails in code, and documented limitations.*
 
 ## At a glance
 
@@ -72,7 +74,7 @@ Two labeled sets:
 | Claude | Main set | 100% | 83% | 0 of 6 |
 | Claude | Held-out set | 100% | 82% | 0 of 6 |
 
-**What this shows:** the keyword rules look excellent on the examples they were written against, then collapse on unseen phrasing and miss almost every urgent request. That's the core risk of rule-based automation, and why the LLM path exists. Even so, the guardrails did their job: everything the baseline couldn't categorize, and the injection attempt, went to human review rather than being silently misrouted.
+**What this shows:** the keyword rules look excellent on the examples they were written against, then collapse on unseen phrasing: 18% category accuracy and 5 of 6 urgent requests missed. Claude held up on both sets, with 100% category accuracy and no urgent requests missed, including on the held-out requests written to avoid obvious keywords. Its remaining urgency errors never left an urgent request in the normal queue. That gap between memorized rules and real generalization is the core risk of rule-based automation, and why evaluating on held-out data matters. The guardrails worked in both modes: anything uncertain, sensitive, or attempting prompt injection went to human review rather than being silently misrouted.
 
 ## Run it
 
